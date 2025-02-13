@@ -1,4 +1,5 @@
-scikit-learn==1.4.2
-numpy
+streamlit==1.4.2
+fuzzywuzzy
+python-Levenshtein
+scikit-learn
 pandas
-streamlit
