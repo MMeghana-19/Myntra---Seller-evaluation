@@ -50,7 +50,7 @@ def find_closest_seller(user_input, seller_names):
     return best_match, score
 
 # Load unique seller names from dataset (Replace 'myntra' with your actual dataframe)
-myntra = pd.read_csv('your_dataset.csv')  # Load your actual dataset
+myntra = pd.read_csv(r"C:\Users\maggi\Downloads\myntra202305041052.csv\myntra202305041052.csv")  # Load your actual dataset
 seller_names = myntra['seller'].unique().tolist()
 
 # Streamlit UI for input
