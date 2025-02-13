@@ -6,7 +6,7 @@ from fuzzywuzzy import process
 
 # Load the pickled components
 def load_pickle_files():
-    with open('XGB_model.pkl', 'rb') as f:
+    with open('final_model.pkl', 'rb') as f:
         model = pickle.load(f)
     
     with open('scaler.pkl', 'rb') as f:
