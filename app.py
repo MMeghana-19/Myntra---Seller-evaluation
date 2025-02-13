@@ -115,7 +115,7 @@ if use_matched_seller:
 user_input = {
     'gender': [gender.lower()],
     'category': [category.lower()],
-    'sub_category': [sub_category.lower()},
+    'sub_category': [sub_category.lower()],
     'product_avg_rating': product_avg_rating,
     'price_category': price_category,
     'discount_category': discount_category,
