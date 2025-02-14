@@ -6,9 +6,12 @@ from fuzzywuzzy import process
 import numpy as np
 
 # Load the pickled components
+import joblib
+model = joblib.load('random_forest_final_model.pkl')
+
 def load_pickle_files():
     with open('random_forest_final_model.pkl', 'wb') as f:
-        pickle.dump(rf_model, f)
+        model = pickle.load(f)
 
     with open('scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
