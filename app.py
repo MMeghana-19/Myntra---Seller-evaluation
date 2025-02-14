@@ -8,16 +8,12 @@ import pickle
 
 # Saving the model
 with open('model.pkl', 'wb') as file:
-    pickle.dump(model, file)
-
-# Loading the model
-with open('random_forest_final_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+    pickle.dump(rf_model, file)
 
 
 def load_pickle_files():
     with open('random_forest_final_model.pkl', 'rb') as file:
-        model = pickle.load(file)
+        rf_model = pickle.load(file)
 
     with open('scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
