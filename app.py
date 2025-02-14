@@ -4,14 +4,20 @@ import pandas as pd
 import streamlit as st
 from fuzzywuzzy import process
 import numpy as np
+import pickle
 
-# Load the pickled components
-import joblib
-model = joblib.load('random_forest_final_model.pkl')
+# Saving the model
+with open('model.pkl', 'wb') as file:
+    pickle.dump(model, file)
+
+# Loading the model
+with open('random_forest_final_model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
 
 def load_pickle_files():
-    with open('random_forest_final_model.pkl', 'wb') as f:
-        model = pickle.load(f)
+    with open('random_forest_final_model.pkl', 'rb') as file:
+        model = pickle.load(file)
 
     with open('scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
