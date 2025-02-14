@@ -8,7 +8,7 @@ import numpy as np
 # Load the pickled components
 def load_pickle_files():
     with open('random_forest_final_model.pkl', 'wb') as f:
-    pickle.dump(rf_model, f)
+        pickle.dump(rf_model, f)
 
     with open('scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
