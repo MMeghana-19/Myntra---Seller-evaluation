@@ -1,0 +1,5 @@
+streamlit
+fuzzywuzzy
+python-Levenshtein
+scikit-learn==1.4.2
+pandas
