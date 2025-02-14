@@ -50,7 +50,22 @@ def find_closest_seller(user_input, seller_names):
     return best_match, score
 
 # Load unique seller names from dataset (Replace 'myntra' with your actual dataframe)
-myntra = pd.read_csv(r"C:\Users\maggi\Downloads\myntra202305041052.csv (1)\myntra202305041052.csv")  # Load your actual dataset
+# GitHub raw file URL (replace with your actual file URL)
+file_url = 'https://raw.githubusercontent.com/MMeghana-19/Myntra---Seller-evaluation/main/myntra202305041052.csv'
+
+# Read the file in chunks to avoid memory overload
+chunk_size = 10000  # Adjust the chunk size as per your available memory
+chunks = pd.read_csv(file_url, chunksize=chunk_size)
+
+# Initialize an empty list to store the chunks
+myntra_chunks = []
+
+# Iterate over each chunk and append it to the list
+for chunk in chunks:
+    myntra_chunks.append(chunk)
+
+# Concatenate all chunks into a single DataFrame
+myntra = pd.concat(myntra_chunks, ignore_index=True)
 seller_names = myntra['seller'].unique().tolist()
 
 # Streamlit UI for input
